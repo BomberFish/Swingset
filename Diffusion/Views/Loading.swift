@@ -12,15 +12,18 @@ import Combine
 func iosModel() -> ModelInfo {
     guard deviceSupportsQuantization else { return ModelInfo.v21Base }
     if deviceHas6GBOrMore { return ModelInfo.xlmbpChunked }
+    if deviceHas8GBOrMore { return ModelInfo.xlmbp }
+    
     return ModelInfo.v21Palettized
 }
 
 struct LoadingView: View {
-
     @StateObject var generation = GenerationContext()
+    
+    @ObservedObject var settings = Settings.shared
 
-    @State private var preparationPhase = "Downloading…"
-    @State private var downloadProgress: Double = 0
+    @State private var preparationPhase: PipelineLoader.PipelinePreparationPhase = .downloading((0,0))
+    @State private var downloadProgress: (Double,Double) = (0,0)
     
     enum CurrentView {
         case loading
@@ -30,34 +33,101 @@ struct LoadingView: View {
     @State private var currentView: CurrentView = .loading
     
     @State private var stateSubscriber: Cancellable?
+    
+    @State var color = false
+    
+    @State var showMoreLoadText = false
+    
+    func bytesToMB(_ bytes: Double) -> Double {
+        bytes / 1024 / 1024
+    }
 
+    @ViewBuilder var loadingView: some View {
+        Group {
+            if preparationPhase == .readyOnDisk {
+                VStack(spacing: 12) {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+//                        .controlSize(.large)
+                        Text("Loading model. This may take a while.")
+                            .font(.headline.weight(.medium))
+                            .foregroundColor(color ? Color.gray : Color.white)
+                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: color)
+                            .animation(.snappy)
+                            .transition(.opacity)
+                            .opacity(showMoreLoadText ? 1 : 0)
+                            .frame(minWidth: showMoreLoadText ? 0 : nil)
+                }
+                .onAppear {
+                    color.toggle()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        if preparationPhase == .readyOnDisk {
+                            print("Model is still loading, this is probably a reinstall. Go grab a coffee.")
+                            withAnimation(.snappy) {
+                                showMoreLoadText = true
+                            }
+                        }
+                    }
+                }
+            } else {
+                VStack {
+                    ProgressView("", value: downloadProgress.0, total: downloadProgress.1)
+                        .labelsHidden()
+                        .padding(.bottom, 6)
+                    Group {
+                        switch preparationPhase {
+                        case .downloading:
+                            Text("Downloading... (\(String(format: "%.2f", bytesToMB(downloadProgress.0))) MB / \(String(format: "%.2f", bytesToMB(downloadProgress.1))) MB)")
+                        case .uncompressing:
+                            Text("Decompressing...")
+                        default:
+                            Text("Loading...")
+                        }
+                    }
+                    .font(.headline)
+                    .foregroundColor(color ? Color.gray : Color.white)
+                    //                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: color)
+                    .animation(.snappy, value: preparationPhase)
+                    .onAppear {
+                        color.toggle()
+                    }
+                }
+                .padding(.horizontal, 50)
+            }
+        }
+        .padding()
+        .animation(.snappy, value: preparationPhase)
+    }
+    
     var body: some View {
         VStack {
             switch currentView {
-            case .textToImage: TextToImage().transition(.opacity)
-            case .error(let message): ErrorPopover(errorMessage: message).transition(.move(edge: .top))
+            case .textToImage:
+                TextToImage().transition(.opacity)
+            case .error(let message):
+                LoadingErrorPopover(errorMessage: message)
+                    .transition(.move(edge: .top))
             case .loading:
-                // TODO: Don't present progress view if the pipeline is cached
-                ProgressView(preparationPhase, value: downloadProgress, total: 1).padding()
+                loadingView
             }
         }
-        .animation(.easeIn, value: currentView)
+        .animation(.snappy, value: currentView)
         .environmentObject(generation)
         .onAppear {
+#if !targetEnvironment(simulator)
             Task.init {
-                let loader = PipelineLoader(model: iosModel())
+                let loader = PipelineLoader(model: settings.currentModel)
                 stateSubscriber = loader.statePublisher.sink { state in
                     DispatchQueue.main.async {
+                        preparationPhase = state
                         switch state {
                         case .downloading(let progress):
-                            preparationPhase = "Downloading"
                             downloadProgress = progress
                         case .uncompressing:
-                            preparationPhase = "Uncompressing"
-                            downloadProgress = 1
+                            downloadProgress = (1,1)
                         case .readyOnDisk:
-                            preparationPhase = "Loading"
-                            downloadProgress = 1
+                            print("Started loading model \"\(settings.currentModel.modelVersion)\" from disk at \(Date()).")
+                            downloadProgress = (1,1)
                         default:
                             break
                         }
@@ -69,7 +139,8 @@ struct LoadingView: View {
                 } catch {
                     self.currentView = .error("Could not load model, error: \(error)")
                 }
-            }            
+            }
+#endif
         }
     }
 }
@@ -77,22 +148,23 @@ struct LoadingView: View {
 // Required by .animation
 extension LoadingView.CurrentView: Equatable {}
 
-struct ErrorPopover: View {
+struct LoadingErrorPopover: View {
     var errorMessage: String
 
     var body: some View {
-        Text(errorMessage)
-            .font(.headline)
-            .padding()
-            .foregroundColor(.red)
-            .background(Color.white)
-            .cornerRadius(8)
-            .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
+        ScrollView {
+            Text(errorMessage)
+                .font(.headline)
+                .padding()
+                .foregroundColor(.red)
+                .textSelection(.enabled)
+        }
     }
 }
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingView()
+            .preferredColorScheme(.dark)
     }
 }

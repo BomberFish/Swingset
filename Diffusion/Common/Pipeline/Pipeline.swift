@@ -12,7 +12,11 @@ import Combine
 
 import StableDiffusion
 
-struct StableDiffusionProgress {
+struct StableDiffusionProgress: Equatable {
+    static func == (lhs: StableDiffusionProgress, rhs: StableDiffusionProgress) -> Bool {
+        lhs.step == rhs.step && lhs.stepCount == rhs.stepCount 
+    }
+    
     var progress: StableDiffusionPipeline.Progress
 
     var step: Int { progress.step }

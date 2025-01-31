@@ -14,7 +14,7 @@ class Downloader: NSObject, ObservableObject {
     
     enum DownloadState {
         case notStarted
-        case downloading(Double)
+        case downloading((Double,Double))
         case completed(URL)
         case failed(Error)
     }
@@ -29,15 +29,15 @@ class Downloader: NSObject, ObservableObject {
         super.init()
         
         var config = URLSessionConfiguration.default
-        #if !os(macOS)
+//        #if !os(macOS)
         // .background allows downloads to proceed in the background
         // helpful for devices that may not keep the app in the foreground for the download duration
         config = URLSessionConfiguration.background(withIdentifier: "net.pcuenca.diffusion.download")
         config.isDiscretionary = false
         config.sessionSendsLaunchEvents = true
-        #endif
+//        #endif
         urlSession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue())
-        downloadState.value = .downloading(0)
+        downloadState.value = .downloading((0, 0))
         urlSession?.getAllTasks { tasks in
             // If there's an existing pending background task with the same URL, let it proceed.
             guard tasks.filter({ $0.originalRequest?.url == url }).isEmpty else {
@@ -82,7 +82,8 @@ class Downloader: NSObject, ObservableObject {
 
 extension Downloader: URLSessionDelegate, URLSessionDownloadDelegate {
     func urlSession(_: URLSession, downloadTask: URLSessionDownloadTask, didWriteData _: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        downloadState.value = .downloading(Double(totalBytesWritten) / Double(totalBytesExpectedToWrite))
+//        print("Downloaded \(totalBytesWritten) of \(totalBytesExpectedToWrite) bytes")
+        downloadState.value = .downloading((Double(totalBytesWritten), Double(totalBytesExpectedToWrite)))
     }
 
     func urlSession(_: URLSession, downloadTask _: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {

@@ -29,10 +29,24 @@ class PipelineLoader {
         setInitialState()
     }
 
-    enum PipelinePreparationPhase {
+    enum PipelinePreparationPhase: Equatable {
+        static func == (lhs: PipelineLoader.PipelinePreparationPhase, rhs: PipelineLoader.PipelinePreparationPhase) -> Bool {
+            switch (lhs, rhs) {
+            case (.undetermined, .undetermined): return true
+            case (.waitingToDownload, .waitingToDownload): return true
+            case (.downloading, .downloading): return true
+            case (.downloaded, .downloaded): return true
+            case (.uncompressing, .uncompressing): return true
+            case (.readyOnDisk, .readyOnDisk): return true
+            case (.loaded, .loaded): return true
+            case (.failed, .failed): return true
+            default: return false
+            }
+        }
+        
         case undetermined
         case waitingToDownload
-        case downloading(Double)
+        case downloading((Double,Double))
         case downloaded
         case uncompressing
         case readyOnDisk
@@ -172,7 +186,7 @@ extension PipelineLoader {
                                                          configuration: configuration,
                                                          reduceMemory: model.reduceMemory)
             } else {
-                throw "Stable Diffusion XL requires macOS 14"
+                throw "Stable Diffusion XL requires iOS 17"
             }
 
         } else if model.isSD3 {
@@ -181,7 +195,7 @@ extension PipelineLoader {
                                                         configuration: configuration,
                                                         reduceMemory: model.reduceMemory)
             } else {
-                throw "Stable Diffusion 3 requires macOS 14"
+                throw "Stable Diffusion 3 requires iOS 17"
             }
         } else {
             pipeline = try StableDiffusionPipeline(resourcesAt: url,

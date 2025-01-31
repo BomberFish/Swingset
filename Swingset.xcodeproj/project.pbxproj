@@ -7,32 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16AFDD4F2C1B7D6200536A62 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = 16AFDD4E2C1B7D6200536A62 /* StableDiffusion */; };
-		16AFDD512C1B7D6700536A62 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = 16AFDD502C1B7D6700536A62 /* StableDiffusion */; };
-		8C4B32042A770C1D0090EF17 /* DiffusionImage+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32032A770C1D0090EF17 /* DiffusionImage+macOS.swift */; };
 		8C4B32062A770C300090EF17 /* DiffusionImage+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32052A770C300090EF17 /* DiffusionImage+iOS.swift */; };
 		8C4B32082A77F90C0090EF17 /* Utils_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32072A77F90C0090EF17 /* Utils_iOS.swift */; };
-		8C4B320A2A77F9160090EF17 /* Utils_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4B32092A77F9160090EF17 /* Utils_macOS.swift */; };
-		8CD8A53A2A456EF800BD8A98 /* PromptTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8A5392A456EF800BD8A98 /* PromptTextField.swift */; };
 		8CD8A53C2A476E2C00BD8A98 /* PromptTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8A5392A456EF800BD8A98 /* PromptTextField.swift */; };
 		8CEEB7D92A54C88C00C23829 /* DiffusionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB7D82A54C88C00C23829 /* DiffusionImage.swift */; };
-		8CEEB7DA2A54C88C00C23829 /* DiffusionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEB7D82A54C88C00C23829 /* DiffusionImage.swift */; };
-		EB067F872992E561004D1AD9 /* HelpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB067F862992E561004D1AD9 /* HelpContent.swift */; };
-		EB560F0429A3C20800C0F8B8 /* Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB560F0329A3C20800C0F8B8 /* Capabilities.swift */; };
+		D6046BCA2D1783D60095B686 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = D6046BC92D1783D60095B686 /* ZIPFoundation */; };
+		D6046BCD2D17842F0095B686 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = D6046BCC2D17842F0095B686 /* StableDiffusion */; };
+		D6046BD02D1784840095B686 /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = D6046BCF2D1784840095B686 /* ColorfulX */; };
+		D631E8A32D18D779004B4D37 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D631E8A22D18D779004B4D37 /* main.swift */; };
 		EBB5BA5329425BEE003A2A5B /* PipelineLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5229425BEE003A2A5B /* PipelineLoader.swift */; };
 		EBB5BA5A29426E06003A2A5B /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5929426E06003A2A5B /* Downloader.swift */; };
-		EBB5BA5D294504DE003A2A5B /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = EBB5BA5C294504DE003A2A5B /* ZIPFoundation */; };
-		EBDD7DAA29731F6C00C1C4B2 /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE75601293E91E200806B32 /* Pipeline.swift */; };
-		EBDD7DAB29731F7500C1C4B2 /* PipelineLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5229425BEE003A2A5B /* PipelineLoader.swift */; };
-		EBDD7DAF29731FB300C1C4B2 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = EBDD7DAE29731FB300C1C4B2 /* ZIPFoundation */; };
 		EBDD7DB32973200200C1C4B2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD7DB22973200200C1C4B2 /* Utils.swift */; };
-		EBDD7DB42973200200C1C4B2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD7DB22973200200C1C4B2 /* Utils.swift */; };
-		EBDD7DB52973201800C1C4B2 /* ModelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE3FF4B295E1EFE00E921AA /* ModelInfo.swift */; };
-		EBDD7DB62973206600C1C4B2 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5BA5929426E06003A2A5B /* Downloader.swift */; };
 		EBDD7DB82976AAFE00C1C4B2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD7DB72976AAFE00C1C4B2 /* State.swift */; };
-		EBDD7DB92976AAFE00C1C4B2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD7DB72976AAFE00C1C4B2 /* State.swift */; };
-		EBDD7DBD2977FFB300C1C4B2 /* GeneratedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDD7DBB2977FFB300C1C4B2 /* GeneratedImageView.swift */; };
-		EBDD7DC02978642200C1C4B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE755CC293E37DD00806B32 /* Assets.xcassets */; };
 		EBE3FF4C295E1EFE00E921AA /* ModelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE3FF4B295E1EFE00E921AA /* ModelInfo.swift */; };
 		EBE755C9293E37DD00806B32 /* DiffusionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE755C8293E37DD00806B32 /* DiffusionApp.swift */; };
 		EBE755CB293E37DD00806B32 /* TextToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE755CA293E37DD00806B32 /* TextToImage.swift */; };
@@ -43,12 +29,6 @@
 		EBE755E7293E37DE00806B32 /* DiffusionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE755E6293E37DE00806B32 /* DiffusionUITestsLaunchTests.swift */; };
 		EBE75602293E91E200806B32 /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE75601293E91E200806B32 /* Pipeline.swift */; };
 		EBE756092941178600806B32 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE756082941178600806B32 /* Loading.swift */; };
-		F15520242971093300DC009B /* Diffusion_macOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15520232971093300DC009B /* Diffusion_macOSApp.swift */; };
-		F15520262971093300DC009B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15520252971093300DC009B /* ContentView.swift */; };
-		F155202B2971093400DC009B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F155202A2971093400DC009B /* Preview Assets.xcassets */; };
-		F1552031297109C300DC009B /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1552030297109C300DC009B /* ControlsView.swift */; };
-		F155203429710B3600DC009B /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155203329710B3600DC009B /* StatusView.swift */; };
-		F155203C297118E700DC009B /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = F155203B297118E700DC009B /* CompactSlider */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,46 +49,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C4B32032A770C1D0090EF17 /* DiffusionImage+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiffusionImage+macOS.swift"; sourceTree = "<group>"; };
 		8C4B32052A770C300090EF17 /* DiffusionImage+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiffusionImage+iOS.swift"; sourceTree = "<group>"; };
 		8C4B32072A77F90C0090EF17 /* Utils_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils_iOS.swift; sourceTree = "<group>"; };
-		8C4B32092A77F9160090EF17 /* Utils_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils_macOS.swift; sourceTree = "<group>"; };
 		8CD8A5392A456EF800BD8A98 /* PromptTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptTextField.swift; sourceTree = "<group>"; };
 		8CEEB7D82A54C88C00C23829 /* DiffusionImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffusionImage.swift; sourceTree = "<group>"; };
-		EB067F862992E561004D1AD9 /* HelpContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpContent.swift; sourceTree = "<group>"; };
+		D631E8A22D18D779004B4D37 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EB33A51E2954E1BC00B16357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		EB560F0329A3C20800C0F8B8 /* Capabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capabilities.swift; sourceTree = "<group>"; };
-		EB560F0529A4090D00C0F8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EBB5BA5229425BEE003A2A5B /* PipelineLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineLoader.swift; sourceTree = "<group>"; };
 		EBB5BA5929426E06003A2A5B /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		EBDD7DB22973200200C1C4B2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EBDD7DB72976AAFE00C1C4B2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		EBDD7DBA2976F03600C1C4B2 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = config/debug.xcconfig; sourceTree = "<group>"; };
-		EBDD7DBB2977FFB300C1C4B2 /* GeneratedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedImageView.swift; sourceTree = "<group>"; };
 		EBE3FF4A295DFE2400E921AA /* common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = common.xcconfig; path = config/common.xcconfig; sourceTree = "<group>"; };
 		EBE3FF4B295E1EFE00E921AA /* ModelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInfo.swift; sourceTree = "<group>"; };
 		EBE4438729488DCA00CDA605 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EBE443892948953600CDA605 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		EBE755C5293E37DD00806B32 /* Diffusion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffusion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE755C5293E37DD00806B32 /* Swingset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swingset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE755C8293E37DD00806B32 /* DiffusionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffusionApp.swift; sourceTree = "<group>"; };
 		EBE755CA293E37DD00806B32 /* TextToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToImage.swift; sourceTree = "<group>"; };
 		EBE755CC293E37DD00806B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBE755CE293E37DD00806B32 /* Diffusion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffusion.entitlements; sourceTree = "<group>"; };
 		EBE755D0293E37DD00806B32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EBE755D6293E37DE00806B32 /* DiffusionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffusionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE755D6293E37DE00806B32 /* SwingsetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwingsetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE755DA293E37DE00806B32 /* DiffusionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffusionTests.swift; sourceTree = "<group>"; };
-		EBE755E0293E37DE00806B32 /* DiffusionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffusionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBE755E0293E37DE00806B32 /* SwingsetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwingsetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE755E4293E37DE00806B32 /* DiffusionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffusionUITests.swift; sourceTree = "<group>"; };
 		EBE755E6293E37DE00806B32 /* DiffusionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffusionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EBE75601293E91E200806B32 /* Pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
 		EBE756082941178600806B32 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		F15520212971093300DC009B /* Diffusers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diffusers.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15520232971093300DC009B /* Diffusion_macOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diffusion_macOSApp.swift; sourceTree = "<group>"; };
-		F15520252971093300DC009B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F155202A2971093400DC009B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F155202C2971093400DC009B /* Diffusion_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diffusion_macOS.entitlements; sourceTree = "<group>"; };
-		F1552030297109C300DC009B /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
-		F155203329710B3600DC009B /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB5BA5D294504DE003A2A5B /* ZIPFoundation in Frameworks */,
-				16AFDD512C1B7D6700536A62 /* StableDiffusion in Frameworks */,
+				D6046BCA2D1783D60095B686 /* ZIPFoundation in Frameworks */,
+				D6046BD02D1784840095B686 /* ColorfulX in Frameworks */,
+				D6046BCD2D17842F0095B686 /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,16 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F155201E2971093300DC009B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F155203C297118E700DC009B /* CompactSlider in Frameworks */,
-				16AFDD4F2C1B7D6200536A62 /* StableDiffusion in Frameworks */,
-				EBDD7DAF29731FB300C1C4B2 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +149,6 @@
 				EBE755FF293E910800806B32 /* Packages */,
 				8CF53E022A44AE0400E6358B /* Common */,
 				EBE755C7293E37DD00806B32 /* Diffusion */,
-				F15520222971093300DC009B /* Diffusion-macOS */,
 				EBE755D9293E37DE00806B32 /* DiffusionTests */,
 				EBE755E3293E37DE00806B32 /* DiffusionUITests */,
 				EBE755C6293E37DD00806B32 /* Products */,
@@ -201,10 +159,9 @@
 		EBE755C6293E37DD00806B32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EBE755C5293E37DD00806B32 /* Diffusion.app */,
-				EBE755D6293E37DE00806B32 /* DiffusionTests.xctest */,
-				EBE755E0293E37DE00806B32 /* DiffusionUITests.xctest */,
-				F15520212971093300DC009B /* Diffusers.app */,
+				EBE755C5293E37DD00806B32 /* Swingset.app */,
+				EBE755D6293E37DE00806B32 /* SwingsetTests.xctest */,
+				EBE755E0293E37DE00806B32 /* SwingsetUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +172,7 @@
 				EB33A51E2954E1BC00B16357 /* Info.plist */,
 				EBE7560A29411A5E00806B32 /* Views */,
 				EBE755C8293E37DD00806B32 /* DiffusionApp.swift */,
+				D631E8A22D18D779004B4D37 /* main.swift */,
 				EBE755CC293E37DD00806B32 /* Assets.xcassets */,
 				EBE755CE293E37DD00806B32 /* Diffusion.entitlements */,
 				EBE755CF293E37DD00806B32 /* Preview Content */,
@@ -272,39 +230,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F15520222971093300DC009B /* Diffusion-macOS */ = {
-			isa = PBXGroup;
-			children = (
-				EB560F0529A4090D00C0F8B8 /* Info.plist */,
-				F15520232971093300DC009B /* Diffusion_macOSApp.swift */,
-				F15520252971093300DC009B /* ContentView.swift */,
-				EBDD7DBB2977FFB300C1C4B2 /* GeneratedImageView.swift */,
-				F1552030297109C300DC009B /* ControlsView.swift */,
-				F155203329710B3600DC009B /* StatusView.swift */,
-				EB067F862992E561004D1AD9 /* HelpContent.swift */,
-				EB560F0329A3C20800C0F8B8 /* Capabilities.swift */,
-				8C4B32032A770C1D0090EF17 /* DiffusionImage+macOS.swift */,
-				8C4B32092A77F9160090EF17 /* Utils_macOS.swift */,
-				F155202C2971093400DC009B /* Diffusion_macOS.entitlements */,
-				F15520292971093400DC009B /* Preview Content */,
-			);
-			path = "Diffusion-macOS";
-			sourceTree = "<group>";
-		};
-		F15520292971093400DC009B /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F155202A2971093400DC009B /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EBE755C4293E37DD00806B32 /* Diffusion */ = {
+		EBE755C4293E37DD00806B32 /* Swingset */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBE755EA293E37DE00806B32 /* Build configuration list for PBXNativeTarget "Diffusion" */;
+			buildConfigurationList = EBE755EA293E37DE00806B32 /* Build configuration list for PBXNativeTarget "Swingset" */;
 			buildPhases = (
 				EBE755C1293E37DD00806B32 /* Sources */,
 				EBE755C2293E37DD00806B32 /* Frameworks */,
@@ -315,18 +246,19 @@
 			dependencies = (
 				EBF61AB32A2F976600482CF3 /* PBXTargetDependency */,
 			);
-			name = Diffusion;
+			name = Swingset;
 			packageProductDependencies = (
-				EBB5BA5C294504DE003A2A5B /* ZIPFoundation */,
-				16AFDD502C1B7D6700536A62 /* StableDiffusion */,
+				D6046BC92D1783D60095B686 /* ZIPFoundation */,
+				D6046BCC2D17842F0095B686 /* StableDiffusion */,
+				D6046BCF2D1784840095B686 /* ColorfulX */,
 			);
 			productName = Diffusion;
-			productReference = EBE755C5293E37DD00806B32 /* Diffusion.app */;
+			productReference = EBE755C5293E37DD00806B32 /* Swingset.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EBE755D5293E37DE00806B32 /* DiffusionTests */ = {
+		EBE755D5293E37DE00806B32 /* SwingsetTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBE755ED293E37DE00806B32 /* Build configuration list for PBXNativeTarget "DiffusionTests" */;
+			buildConfigurationList = EBE755ED293E37DE00806B32 /* Build configuration list for PBXNativeTarget "SwingsetTests" */;
 			buildPhases = (
 				EBE755D2293E37DE00806B32 /* Sources */,
 				EBE755D3293E37DE00806B32 /* Frameworks */,
@@ -337,14 +269,14 @@
 			dependencies = (
 				EBE755D8293E37DE00806B32 /* PBXTargetDependency */,
 			);
-			name = DiffusionTests;
+			name = SwingsetTests;
 			productName = DiffusionTests;
-			productReference = EBE755D6293E37DE00806B32 /* DiffusionTests.xctest */;
+			productReference = EBE755D6293E37DE00806B32 /* SwingsetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EBE755DF293E37DE00806B32 /* DiffusionUITests */ = {
+		EBE755DF293E37DE00806B32 /* SwingsetUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EBE755F0293E37DE00806B32 /* Build configuration list for PBXNativeTarget "DiffusionUITests" */;
+			buildConfigurationList = EBE755F0293E37DE00806B32 /* Build configuration list for PBXNativeTarget "SwingsetUITests" */;
 			buildPhases = (
 				EBE755DC293E37DE00806B32 /* Sources */,
 				EBE755DD293E37DE00806B32 /* Frameworks */,
@@ -355,34 +287,10 @@
 			dependencies = (
 				EBE755E2293E37DE00806B32 /* PBXTargetDependency */,
 			);
-			name = DiffusionUITests;
+			name = SwingsetUITests;
 			productName = DiffusionUITests;
-			productReference = EBE755E0293E37DE00806B32 /* DiffusionUITests.xctest */;
+			productReference = EBE755E0293E37DE00806B32 /* SwingsetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		F15520202971093300DC009B /* Diffusion-macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F155202F2971093400DC009B /* Build configuration list for PBXNativeTarget "Diffusion-macOS" */;
-			buildPhases = (
-				EB7FE72529954BFF009056BD /* ShellScript */,
-				F155201D2971093300DC009B /* Sources */,
-				F155201E2971093300DC009B /* Frameworks */,
-				F155201F2971093300DC009B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB0199492A31FEAF00B133E2 /* PBXTargetDependency */,
-			);
-			name = "Diffusion-macOS";
-			packageProductDependencies = (
-				F155203B297118E700DC009B /* CompactSlider */,
-				EBDD7DAE29731FB300C1C4B2 /* ZIPFoundation */,
-				16AFDD4E2C1B7D6200536A62 /* StableDiffusion */,
-			);
-			productName = "Diffusion-macOS";
-			productReference = F15520212971093300DC009B /* Diffusers.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -392,7 +300,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					EBE755C4293E37DD00806B32 = {
 						CreatedOnToolsVersion = 14.1;
@@ -405,12 +313,9 @@
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = EBE755C4293E37DD00806B32;
 					};
-					F15520202971093300DC009B = {
-						CreatedOnToolsVersion = 14.2;
-					};
 				};
 			};
-			buildConfigurationList = EBE755C0293E37DD00806B32 /* Build configuration list for PBXProject "Diffusion" */;
+			buildConfigurationList = EBE755C0293E37DD00806B32 /* Build configuration list for PBXProject "Swingset" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -420,18 +325,18 @@
 			);
 			mainGroup = EBE755BC293E37DD00806B32;
 			packageReferences = (
-				EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 				F155203A297118E600DC009B /* XCRemoteSwiftPackageReference "CompactSlider" */,
-				16AFDD4D2C1B7D4800536A62 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+				D6046BC82D1783D60095B686 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				D6046BCB2D17842F0095B686 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+				D6046BCE2D1784840095B686 /* XCRemoteSwiftPackageReference "ColorfulX" */,
 			);
 			productRefGroup = EBE755C6293E37DD00806B32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EBE755C4293E37DD00806B32 /* Diffusion */,
-				EBE755D5293E37DE00806B32 /* DiffusionTests */,
-				EBE755DF293E37DE00806B32 /* DiffusionUITests */,
-				F15520202971093300DC009B /* Diffusion-macOS */,
+				EBE755C4293E37DD00806B32 /* Swingset */,
+				EBE755D5293E37DE00806B32 /* SwingsetTests */,
+				EBE755DF293E37DE00806B32 /* SwingsetUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -460,37 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F155201F2971093300DC009B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBDD7DC02978642200C1C4B2 /* Assets.xcassets in Resources */,
-				F155202B2971093400DC009B /* Preview Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EB7FE72529954BFF009056BD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" != \"Debug\" ]\nthen    \n    version=`date +%Y%m%d.%H%M%S`\n    CONFIG_FILE=${SRCROOT}/config/common.xcconfig\n    sed -e 's/^CURRENT_PROJECT_VERSION.*/CURRENT_PROJECT_VERSION = '\"$version\"'/' ${CONFIG_FILE} > ${CONFIG_FILE}.tmp\n    [[ -s ${CONFIG_FILE}.tmp ]] && {\n        mv ${CONFIG_FILE}.tmp ${CONFIG_FILE}\n    }\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBE755C1293E37DD00806B32 /* Sources */ = {
@@ -505,6 +380,7 @@
 				EBE3FF4C295E1EFE00E921AA /* ModelInfo.swift in Sources */,
 				EBE756092941178600806B32 /* Loading.swift in Sources */,
 				8C4B32082A77F90C0090EF17 /* Utils_iOS.swift in Sources */,
+				D631E8A32D18D779004B4D37 /* main.swift in Sources */,
 				EBDD7DB82976AAFE00C1C4B2 /* State.swift in Sources */,
 				EBB5BA5329425BEE003A2A5B /* PipelineLoader.swift in Sources */,
 				8CD8A53C2A476E2C00BD8A98 /* PromptTextField.swift in Sources */,
@@ -530,45 +406,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F155201D2971093300DC009B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBDD7DAB29731F7500C1C4B2 /* PipelineLoader.swift in Sources */,
-				EBDD7DAA29731F6C00C1C4B2 /* Pipeline.swift in Sources */,
-				F15520262971093300DC009B /* ContentView.swift in Sources */,
-				EBDD7DB92976AAFE00C1C4B2 /* State.swift in Sources */,
-				EB067F872992E561004D1AD9 /* HelpContent.swift in Sources */,
-				8C4B320A2A77F9160090EF17 /* Utils_macOS.swift in Sources */,
-				EBDD7DB42973200200C1C4B2 /* Utils.swift in Sources */,
-				8CD8A53A2A456EF800BD8A98 /* PromptTextField.swift in Sources */,
-				F1552031297109C300DC009B /* ControlsView.swift in Sources */,
-				EBDD7DB62973206600C1C4B2 /* Downloader.swift in Sources */,
-				F155203429710B3600DC009B /* StatusView.swift in Sources */,
-				EB560F0429A3C20800C0F8B8 /* Capabilities.swift in Sources */,
-				F15520242971093300DC009B /* Diffusion_macOSApp.swift in Sources */,
-				EBDD7DB52973201800C1C4B2 /* ModelInfo.swift in Sources */,
-				8C4B32042A770C1D0090EF17 /* DiffusionImage+macOS.swift in Sources */,
-				EBDD7DBD2977FFB300C1C4B2 /* GeneratedImageView.swift in Sources */,
-				8CEEB7DA2A54C88C00C23829 /* DiffusionImage.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EB0199492A31FEAF00B133E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = EB0199482A31FEAF00B133E2 /* StableDiffusion */;
-		};
 		EBE755D8293E37DE00806B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EBE755C4293E37DD00806B32 /* Diffusion */;
+			target = EBE755C4293E37DD00806B32 /* Swingset */;
 			targetProxy = EBE755D7293E37DE00806B32 /* PBXContainerItemProxy */;
 		};
 		EBE755E2293E37DE00806B32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EBE755C4293E37DD00806B32 /* Diffusion */;
+			target = EBE755C4293E37DD00806B32 /* Swingset */;
 			targetProxy = EBE755E1293E37DE00806B32 /* PBXContainerItemProxy */;
 		};
 		EBF61AB32A2F976600482CF3 /* PBXTargetDependency */ = {
@@ -611,9 +459,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -669,9 +519,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -696,11 +548,16 @@
 				CODE_SIGN_ENTITLEMENTS = Diffusion/Diffusion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Diffusion/Preview Content\"";
+				DEVELOPMENT_TEAM = 8JKVMYCRTJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diffusion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Swingset;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "To be able to save generated images to your Photo Library, you’ll need to allow this.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -709,12 +566,13 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Swingset;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -735,11 +593,16 @@
 				CODE_SIGN_ENTITLEMENTS = Diffusion/Diffusion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Diffusion/Preview Content\"";
+				DEVELOPMENT_TEAM = 8JKVMYCRTJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diffusion/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Swingset;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "To be able to save generated images to your Photo Library, you’ll need to allow this.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -748,12 +611,13 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.Swingset;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -768,10 +632,10 @@
 		EBE755EE293E37DE00806B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZWDJQ796RU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -784,17 +648,17 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffusion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffusion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swingset.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swingset";
 			};
 			name = Debug;
 		};
 		EBE755EF293E37DE00806B32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZWDJQ796RU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -807,16 +671,16 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diffusion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Diffusion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swingset.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swingset";
 			};
 			name = Release;
 		};
 		EBE755F1293E37DE00806B32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZWDJQ796RU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -836,9 +700,9 @@
 		EBE755F2293E37DE00806B32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ZWDJQ796RU;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -855,67 +719,10 @@
 			};
 			name = Release;
 		};
-		F155202D2971093400DC009B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBDD7DBA2976F03600C1C4B2 /* debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Diffusion-macOS/Diffusion_macOS.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Diffusion-macOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2EADP68M95;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Diffusion-macOS/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F155202E2971093400DC009B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBE3FF4A295DFE2400E921AA /* common.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "Diffusion-macOS/Diffusion_macOS.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Diffusion-macOS/Preview Content\"";
-				DEVELOPMENT_TEAM = 2EADP68M95;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Diffusion-macOS/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.huggingface.Diffusers;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EBE755C0293E37DD00806B32 /* Build configuration list for PBXProject "Diffusion" */ = {
+		EBE755C0293E37DD00806B32 /* Build configuration list for PBXProject "Swingset" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBE755E8293E37DE00806B32 /* Debug */,
@@ -924,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBE755EA293E37DE00806B32 /* Build configuration list for PBXNativeTarget "Diffusion" */ = {
+		EBE755EA293E37DE00806B32 /* Build configuration list for PBXNativeTarget "Swingset" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBE755EB293E37DE00806B32 /* Debug */,
@@ -933,7 +740,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBE755ED293E37DE00806B32 /* Build configuration list for PBXNativeTarget "DiffusionTests" */ = {
+		EBE755ED293E37DE00806B32 /* Build configuration list for PBXNativeTarget "SwingsetTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBE755EE293E37DE00806B32 /* Debug */,
@@ -942,7 +749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EBE755F0293E37DE00806B32 /* Build configuration list for PBXNativeTarget "DiffusionUITests" */ = {
+		EBE755F0293E37DE00806B32 /* Build configuration list for PBXNativeTarget "SwingsetUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBE755F1293E37DE00806B32 /* Debug */,
@@ -951,32 +758,31 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F155202F2971093400DC009B /* Build configuration list for PBXNativeTarget "Diffusion-macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F155202D2971093400DC009B /* Debug */,
-				F155202E2971093400DC009B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		16AFDD4D2C1B7D4800536A62 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
+		D6046BC82D1783D60095B686 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/argmaxinc/ml-stable-diffusion.git";
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+		D6046BCB2D17842F0095B686 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/ml-stable-diffusion";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+		D6046BCE2D1784840095B686 /* XCRemoteSwiftPackageReference "ColorfulX" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
+			repositoryURL = "https://github.com/Lakr233/ColorfulX";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.9;
+				minimumVersion = 5.5.2;
 			};
 		};
 		F155203A297118E600DC009B /* XCRemoteSwiftPackageReference "CompactSlider" */ = {
@@ -990,38 +796,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		16AFDD4E2C1B7D6200536A62 /* StableDiffusion */ = {
+		D6046BC92D1783D60095B686 /* ZIPFoundation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 16AFDD4D2C1B7D4800536A62 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
-			productName = StableDiffusion;
-		};
-		16AFDD502C1B7D6700536A62 /* StableDiffusion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16AFDD4D2C1B7D4800536A62 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
-			productName = StableDiffusion;
-		};
-		EB0199482A31FEAF00B133E2 /* StableDiffusion */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = StableDiffusion;
-		};
-		EBB5BA5C294504DE003A2A5B /* ZIPFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			package = D6046BC82D1783D60095B686 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
 			productName = ZIPFoundation;
 		};
-		EBDD7DAE29731FB300C1C4B2 /* ZIPFoundation */ = {
+		D6046BCC2D17842F0095B686 /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EBB5BA5B294504DE003A2A5B /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
-			productName = ZIPFoundation;
+			package = D6046BCB2D17842F0095B686 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		D6046BCF2D1784840095B686 /* ColorfulX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6046BCE2D1784840095B686 /* XCRemoteSwiftPackageReference "ColorfulX" */;
+			productName = ColorfulX;
 		};
 		EBF61AB22A2F976600482CF3 /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = StableDiffusion;
-		};
-		F155203B297118E700DC009B /* CompactSlider */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F155203A297118E600DC009B /* XCRemoteSwiftPackageReference "CompactSlider" */;
-			productName = CompactSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

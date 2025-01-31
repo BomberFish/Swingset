@@ -241,19 +241,28 @@ extension ModelInfo {
                 ModelInfo.v2Base,
                 ModelInfo.v2Palettized,
                 ModelInfo.v21Base,
-                ModelInfo.v21Palettized
+                ModelInfo.v21Palettized,
+                ModelInfo.xlmbpChunked,
+                ModelInfo.xlmbp,
+                // Technically macOS-only models
+                ModelInfo.xl,
+                ModelInfo.xlWithRefiner,
+                
+                // Non-ANE models
+                ModelInfo.sd3,
+                ModelInfo.sd3highres,
             ]
-            if runningOnMac {
-                models.append(contentsOf: [
-                    ModelInfo.xl,
-                    ModelInfo.xlWithRefiner,
-                    ModelInfo.xlmbp,
-                    ModelInfo.sd3,
-                    ModelInfo.sd3highres,
-                ])
-            } else {
-                models.append(ModelInfo.xlmbpChunked)
-            }
+//            if runningOnMac {
+//                models.append(contentsOf: [
+//                    ModelInfo.xl,
+//                    ModelInfo.xlWithRefiner,
+//                    ModelInfo.xlmbp,
+//                    ModelInfo.sd3,
+//                    ModelInfo.sd3highres,
+//                ])
+//            } else {
+//                models.append(ModelInfo.xlmbpChunked)
+//            }
             return models
         } else {
             return [
@@ -276,4 +285,14 @@ extension ModelInfo {
 
 extension ModelInfo : Equatable {
     static func ==(lhs: ModelInfo, rhs: ModelInfo) -> Bool { lhs.modelId == rhs.modelId }
+}
+
+extension ModelInfo : Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(modelId)
+    }
+}
+
+extension ModelInfo : Identifiable {
+    var id: String { modelId }
 }

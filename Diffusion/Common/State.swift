@@ -11,10 +11,42 @@ import SwiftUI
 import StableDiffusion
 import CoreML
 
-let DEFAULT_MODEL = ModelInfo.sd3
-let DEFAULT_PROMPT = "Labrador in the style of Vermeer"
+let DEFAULT_MODEL = iosModel()
+let DEFAULT_PROMPT = ""
 
-enum GenerationState {
+enum GenerationState: Equatable {
+    static func == (lhs: GenerationState, rhs: GenerationState) -> Bool {
+        switch (lhs, rhs) {
+        case (.startup, .startup): return true
+        case (.running, .running): return true
+        case (.complete, .complete): return true
+        case (.userCanceled, .userCanceled): return true
+        case (.failed, .failed): return true
+        default: return false
+        }
+    }
+    
+    var isRunning: Bool {
+        switch self {
+        case .running: return true
+        default: return false
+        }
+    }
+    
+    var isComplete: Bool {
+        switch self {
+        case .complete: return true
+        default: return false
+        }
+    }
+    
+    var isStartup: Bool {
+        switch self {
+        case .startup: return true
+        default: return false
+        }
+    }
+    
     case startup
     case running(StableDiffusionProgress?)
     case complete(String, CGImage?, UInt32, TimeInterval?)
@@ -70,7 +102,7 @@ class GenerationContext: ObservableObject {
     @Published var seed: UInt32 = Settings.shared.seed
     @Published var guidanceScale: Double = Settings.shared.guidanceScale
     @Published var previews: Double = runningOnMac ? Settings.shared.previewCount : 0.0
-    @Published var disableSafety = false
+    @Published var disableSafety = true
     @Published var previewImage: CGImage? = nil
 
     @Published var computeUnits: ComputeUnits = Settings.shared.userSelectedComputeUnits ?? ModelInfo.defaultComputeUnits
@@ -89,6 +121,7 @@ class GenerationContext: ObservableObject {
 
     func generate() async throws -> GenerationResult {
         guard let pipeline = pipeline else { throw "No pipeline" }
+        print(positivePrompt, negativePrompt, scheduler, steps, numImages, seed, guidanceScale, previews, disableSafety)
         return try pipeline.generate(
             prompt: positivePrompt,
             negativePrompt: negativePrompt,
@@ -106,159 +139,71 @@ class GenerationContext: ObservableObject {
     }
 }
 
-class Settings {
-    static let shared = Settings()
-    
-    let defaults = UserDefaults.standard
-    
-    enum Keys: String {
-        case model
-        case safetyCheckerDisclaimer
-        case computeUnits
-        case prompt
-        case negativePrompt
-        case guidanceScale
-        case stepCount
-        case previewCount
-        case seed
-    }
+class Settings: ObservableObject {
+	static let shared = Settings()
 
-    private init() {
-        defaults.register(defaults: [
-            Keys.model.rawValue: ModelInfo.v2Base.modelId,
-            Keys.safetyCheckerDisclaimer.rawValue: false,
-            Keys.computeUnits.rawValue: -1,      // Use default
-            Keys.prompt.rawValue: DEFAULT_PROMPT,
-            Keys.negativePrompt.rawValue: "",
-            Keys.guidanceScale.rawValue: 7.5,
-            Keys.stepCount.rawValue: 25,
-            Keys.previewCount.rawValue: 5,
-            Keys.seed.rawValue: 0
-        ])
-    }
+	enum Keys: String {
+		case model
+		case safetyCheckerDisclaimer
+		case computeUnits
+		case prompt
+		case negativePrompt
+		case guidanceScale
+		case stepCount
+		case previewCount
+		case seed
+	}
+	
+	@AppStorage(Keys.model.rawValue) private var storedModel: String = iosModel().modelId
+	var currentModel: ModelInfo {
+		get { ModelInfo.from(modelId: storedModel) ?? iosModel() }
+		set { storedModel = newValue.modelId }
+	}
 
-    var currentModel: ModelInfo {
-        set {
-            defaults.set(newValue.modelId, forKey: Keys.model.rawValue)
-        }
-        get {
-            guard let modelId = defaults.string(forKey: Keys.model.rawValue) else { return DEFAULT_MODEL }
-            return ModelInfo.from(modelId: modelId) ?? DEFAULT_MODEL
-        }
-    }
+	@AppStorage(Keys.prompt.rawValue) var prompt: String = DEFAULT_PROMPT
+	@AppStorage(Keys.negativePrompt.rawValue) var negativePrompt: String = ""
+	@AppStorage(Keys.guidanceScale.rawValue) var guidanceScale: Double = 7.5
+    @AppStorage(Keys.stepCount.rawValue) var stepCount: Double = 25.0
+	@AppStorage(Keys.previewCount.rawValue) var previewCount: Double = 5
+	@AppStorage(Keys.seed.rawValue) private var storedSeed: String = "0"
+	var seed: UInt32 {
+		get { UInt32(storedSeed) ?? 0 }
+		set { storedSeed = String(newValue) }
+	}
+	@AppStorage(Keys.safetyCheckerDisclaimer.rawValue) var safetyCheckerDisclaimerShown: Bool = false
 
-    var prompt: String {
-        set {
-            defaults.set(newValue, forKey: Keys.prompt.rawValue)
-        }
-        get {
-            return defaults.string(forKey: Keys.prompt.rawValue) ?? DEFAULT_PROMPT
-        }
-    }
+	@AppStorage(Keys.computeUnits.rawValue) private var storedComputeUnits: Int = -1
+	var userSelectedComputeUnits: ComputeUnits? {
+		get { storedComputeUnits == -1 ? nil : ComputeUnits(rawValue: storedComputeUnits) }
+		set { storedComputeUnits = newValue?.rawValue ?? -1 }
+	}
 
-    var negativePrompt: String {
-        set {
-            defaults.set(newValue, forKey: Keys.negativePrompt.rawValue)
-        }
-        get {
-            return defaults.string(forKey: Keys.negativePrompt.rawValue) ?? ""
-        }
-    }
+	private init() {}
 
-    var guidanceScale: Double {
-        set {
-            defaults.set(newValue, forKey: Keys.guidanceScale.rawValue)
-        }
-        get {
-            return defaults.double(forKey: Keys.guidanceScale.rawValue)
-        }
-    }
+	public func applicationSupportURL() -> URL {
+		let fileManager = FileManager.default
+		guard let appDirectoryURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+			return URL.applicationSupportDirectory
+		}
+		do {
+			try fileManager.createDirectory(at: appDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+		} catch {
+			print("Error creating application support directory: \(error)")
+			return fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
+		}
+		return appDirectoryURL
+	}
 
-    var stepCount: Double {
-        set {
-            defaults.set(newValue, forKey: Keys.stepCount.rawValue)
-        }
-        get {
-            return defaults.double(forKey: Keys.stepCount.rawValue)
-        }
-    }
-
-    var previewCount: Double {
-        set {
-            defaults.set(newValue, forKey: Keys.previewCount.rawValue)
-        }
-        get {
-            return defaults.double(forKey: Keys.previewCount.rawValue)
-        }
-    }
-
-    var seed: UInt32 {
-        set {
-            defaults.set(String(newValue), forKey: Keys.seed.rawValue)
-        }
-        get {
-            if let seedString = defaults.string(forKey: Keys.seed.rawValue), let seedValue = UInt32(seedString) {
-                return seedValue
-            }
-            return 0
-        }
-    }
-
-    var safetyCheckerDisclaimerShown: Bool {
-        set {
-            defaults.set(newValue, forKey: Keys.safetyCheckerDisclaimer.rawValue)
-        }
-        get {
-            return defaults.bool(forKey: Keys.safetyCheckerDisclaimer.rawValue)
-        }
-    }
-    
-    /// Returns the option selected by the user, if overridden
-    /// `nil` means: guess best
-    var userSelectedComputeUnits: ComputeUnits? {
-        set {
-            // Any value other than the supported ones would cause `get` to return `nil`
-            defaults.set(newValue?.rawValue ?? -1, forKey: Keys.computeUnits.rawValue)
-        }
-        get {
-            let current = defaults.integer(forKey: Keys.computeUnits.rawValue)
-            guard current != -1 else { return nil }
-            return ComputeUnits(rawValue: current)
-        }
-    }
-
-    public func applicationSupportURL() -> URL {
-        let fileManager = FileManager.default
-        guard let appDirectoryURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
-            // To ensure we don't return an optional - if the user domain application support cannot be accessed use the top level application support directory
-            return URL.applicationSupportDirectory
-        }
-
-        do {
-            // Create the application support directory if it doesn't exist
-            try fileManager.createDirectory(at: appDirectoryURL, withIntermediateDirectories: true, attributes: nil)
-            return appDirectoryURL
-        } catch {
-            print("Error creating application support directory: \(error)")
-            return fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        }
-    }
-
-    func tempStorageURL() -> URL {
-        
-        let tmpDir = applicationSupportURL().appendingPathComponent("hf-diffusion-tmp")
-        
-        // Create directory if it doesn't exist
-        if !FileManager.default.fileExists(atPath: tmpDir.path) {
-            do {
-                try FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true, attributes: nil)
-            } catch {
-                print("Failed to create temporary directory: \(error)")
-                return FileManager.default.temporaryDirectory
-            }
-        }
-        
-        return tmpDir
-    }
-
+	func tempStorageURL() -> URL {
+		let tmpDir = applicationSupportURL().appendingPathComponent("hf-diffusion-tmp")
+		if !FileManager.default.fileExists(atPath: tmpDir.path) {
+			do {
+				try FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true, attributes: nil)
+			} catch {
+				print("Failed to create temporary directory: \(error)")
+				return FileManager.default.temporaryDirectory
+			}
+		}
+		return tmpDir
+	}
 }
