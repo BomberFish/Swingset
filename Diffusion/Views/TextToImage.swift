@@ -288,8 +288,14 @@ struct ImageWithPlaceholder: View {
                             }
                     case .running(let progress):
                         RunningView(progress: progress)
+                            .onAppear {
+                                UIApplication.shared.isIdleTimerDisabled = true
+                            }
                     case .complete(let lastPrompt, let image, _, let interval):
                         CompleteView(lastPrompt: lastPrompt, image: image, interval: interval)
+                            .onAppear {
+                                UIApplication.shared.isIdleTimerDisabled = false
+                            }
 //                    case .userCanceled:
 //                        Text("Generation canceled.")
 //                            .foregroundStyle(.secondary)

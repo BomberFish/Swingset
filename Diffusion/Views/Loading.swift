@@ -103,12 +103,22 @@ struct LoadingView: View {
         VStack {
             switch currentView {
             case .textToImage:
-                TextToImage().transition(.opacity)
+                TextToImage()
+                    .transition(.opacity)
+                    .onAppear {
+                        UIApplication.shared.isIdleTimerDisabled = false
+                    }
             case .error(let message):
                 LoadingErrorPopover(errorMessage: message)
                     .transition(.move(edge: .top))
+                    .onAppear {
+                        UIApplication.shared.isIdleTimerDisabled = false
+                    }
             case .loading:
                 loadingView
+                    .onAppear {
+                        UIApplication.shared.isIdleTimerDisabled = true
+                    }
             }
         }
         .animation(.snappy, value: currentView)
